@@ -32,3 +32,9 @@ To use the Code Review Bot, follow these steps:
 
 - Extend the bot's functionality to support code reviews for languages other than Java.
 - Implement additional code analysis rules and guidelines to provide more comprehensive feedback.
+
+## Sample Demo Image
+![image](https://github.com/harishcarpenter1/CodeReviewBot/assets/92323049/065908ed-6105-43a9-834c-e6040f2b774a)
+
+
+
