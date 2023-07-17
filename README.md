@@ -1,6 +1,6 @@
-# Code Review Bot
+# AI JAVA Code Review Bot
 
-The Code Review Bot is a full stack application developed using ReactJS and Python. It fetches code from a GitHub repository provided by the user and analyzes it based on predefined guidelines for Java code reviews. The bot leverages OpenAI's "text-davinci-003" language model to provide human-like text responses and suggestions for code improvements.
+The Code Review Bot is a full-stack application developed using ReactJS and Python. It fetches code from a GitHub repository provided by the user and analyzes it based on predefined guidelines for Java code reviews. The bot leverages OpenAI's "GPT 3.5 Turbo" language model to provide human-like text responses and suggestions for code improvements.
 
 ## Features
 
@@ -10,7 +10,7 @@ The Code Review Bot is a full stack application developed using ReactJS and Pyth
 
 - **Code Retrieval and Processing**: The bot includes functions to fetch code from a Git repository provided by the user. The Git library is used to clone the repository, checkout a specific branch, and retrieve Java code files. The fetched Java code files are then read and stored for further processing.
 
-- **OpenAI Integration**: To generate feedback, the bot utilizes OpenAI's "text-davinci-003" language model. A function called "generate_feedback" is defined, which sends a prompt to the OpenAI Completion API. The generated feedback is obtained from the API response and returned.
+- **OpenAI Integration**: To generate feedback, the bot utilizes OpenAI's "GPT 3.5 Turbo" language model. A function called "generate_feedback" is defined, which sends a prompt to the OpenAI Completion API. The generated feedback is obtained from the API response and returned.
 
 - **API Endpoint and Response**: The Flask route "/feedback" handles POST requests from the frontend. The function "get_feedback" is executed when the route is accessed. It retrieves the repository URL from the request data and fetches Java code from the repository. For each Java code file, it generates feedback using the "generate_feedback" function. The feedback is stored in a dictionary and returned as a JSON response to the frontend.
 
@@ -34,7 +34,12 @@ To use the Code Review Bot, follow these steps:
 - Implement additional code analysis rules and guidelines to provide more comprehensive feedback.
 
 ## Sample Demo Image
-![image](https://github.com/harishcarpenter1/CodeReviewBot/assets/92323049/065908ed-6105-43a9-834c-e6040f2b774a)
+![Screenshot (205)](https://github.com/harishcarpenter1/AIBOT/assets/92323049/bb959e6b-9d3e-4d8a-8097-fb2374c603d1)
+
+![Screenshot (206)](https://github.com/harishcarpenter1/AIBOT/assets/92323049/9e228e54-c347-49c6-8e46-6ba9fd960b0d)
+
+![Screenshot (207)](https://github.com/harishcarpenter1/AIBOT/assets/92323049/6e7cc989-816f-4bf4-8c15-76c439befe04)
+
 
 
 
