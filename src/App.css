@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 .app {
     display: flex;
     height: 100vh;
@@ -48,9 +53,11 @@
     padding: 30px;
     overflow-y: auto;
     max-height: 500px;
-    /* Adjust the max height as needed */
 }
+
 .message {
+    display: flex;
+    align-items: flex-start;
     padding: 10px;
     margin-bottom: 5px;
     border-radius: 4px;
@@ -58,16 +65,26 @@
     overflow-y: auto;
 }
 
+.icon {
+    margin-right: 10px;
+    align-self: flex-start;
+}
+
 .user {
-    background-color: #e8f0fe;
+    background-color: #fff;
     color: #333;
+    text-align: justify;
 }
 
 .bot {
-    background-color: #eff8e9;
+    background-color: #fff;
     color: #333;
+    text-align: justify;
 }
 
+.message-content {
+    margin-right: 20px;
+}
 .input-container {
     width: 100%;
     max-width: 600px;
@@ -100,4 +117,14 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+.download-button{
+margin-top: 10px;
+}
+
+.download-button a{
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
 }
