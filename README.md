@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Code Review Bot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Code Review Bot is a full stack application developed using ReactJS and Python. It fetches code from a GitHub repository provided by the user and analyzes it based on predefined guidelines for Java code reviews. The bot leverages OpenAI's "text-davinci-003" language model to provide human-like text responses and suggestions for code improvements.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Frontend Technologies**: The frontend of the application is built using ReactJS, HTML, and CSS. React hooks such as useState and useEffect are used to manage state, handle user input, and perform side effects. The user interface (UI) is defined using JSX, allowing dynamic rendering of messages and input forms.
 
-### `npm start`
+- **Backend Technologies**: The backend of the application is developed using Python with the Flask web framework. Flask is a lightweight web framework that enables seamless communication with the frontend. The Flask app is initialized, and Cross-Origin Resource Sharing (CORS) is enabled to allow communication with the frontend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Code Retrieval and Processing**: The bot includes functions to fetch code from a Git repository provided by the user. The Git library is used to clone the repository, checkout a specific branch, and retrieve Java code files. The fetched Java code files are then read and stored for further processing.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **OpenAI Integration**: To generate feedback, the bot utilizes OpenAI's "text-davinci-003" language model. A function called "generate_feedback" is defined, which sends a prompt to the OpenAI Completion API. The generated feedback is obtained from the API response and returned.
 
-### `npm test`
+- **API Endpoint and Response**: The Flask route "/feedback" handles POST requests from the frontend. The function "get_feedback" is executed when the route is accessed. It retrieves the repository URL from the request data and fetches Java code from the repository. For each Java code file, it generates feedback using the "generate_feedback" function. The feedback is stored in a dictionary and returned as a JSON response to the frontend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+To use the Code Review Bot, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository to your local machine.
+2. Install the required dependencies by running `npm install` for the frontend and `pip install -r requirements.txt` for the backend.
+3. Start the Flask backend server by running `python server.py`.
+4. Start the React development server by running `npm start`.
+5. Access the application in your browser at `http://localhost:3000`.
+6. Enter the URL of the GitHub repository you want to analyze.
+7. Click the "Submit" button to initiate the code review process.
+8. The bot will analyze the code based on predefined guidelines and provide feedback and suggestions for improvements.
+9. Review the feedback and use it to enhance your code quality.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Future Improvements
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Extend the bot's functionality to support code reviews for languages other than Java.
+- Implement additional code analysis rules and guidelines to provide more comprehensive feedback.
 
-### `npm run eject`
+## Sample Demo Image
+![image](https://github.com/harishcarpenter1/CodeReviewBot/assets/92323049/065908ed-6105-43a9-834c-e6040f2b774a)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
